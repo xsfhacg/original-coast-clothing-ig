@@ -157,6 +157,7 @@ app.post("/webhook", (req, res) => {
 // Verify that the callback came from Facebook.
 function verifyRequestSignature(req, res, buf) {
   const signature = req.headers["x-hub-signature"];
+  console.warn(`【signature】：${signature}`);
 
   if (!signature) {
     console.warn(`Couldn't find "x-hub-signature" in headers.`);
