@@ -74,9 +74,9 @@ module.exports = class Receive {
 
   // Handles messages events with text
   handleTextMessage() {
-    console.log(`【当前用户参数】：${this.user.id}`);
+    //console.log(`【当前用户参数】：${this.user.id}`);
     console.log(
-      `Received text from user '${this.user.name}' (${this.user.igsid}):\n`,
+      //`Received text from user '${this.user.name}' (${this.user.igsid}):\n`,
       this.webhookEvent.message.text
     );
 
@@ -133,7 +133,7 @@ module.exports = class Receive {
 
     // Get the attachment
     let attachment = this.webhookEvent.message.attachments[0];
-    console.log("Received attachment:", `${attachment} for ${this.user.igsid}`);
+    //console.log("Received attachment:", `${attachment} for ${this.user.igsid}`);
 
     response = Response.genQuickReply(i18n.__("fallback.attachment"), [
       {
@@ -181,7 +181,7 @@ module.exports = class Receive {
   }
 
   handlePayload(payload) {
-    console.log(`Received Payload: ${payload} for user ${this.user.igsid}`);
+    //console.log(`Received Payload: ${payload} for user ${this.user.igsid}`);
 
     let response;
 
