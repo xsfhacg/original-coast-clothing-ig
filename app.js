@@ -123,9 +123,11 @@ app.post("/webhook", (req, res) => {
 
         // Get the sender IGSID
         let senderIgsid = webhookEvent.sender.id;
+        console.log(`【获取发信人ID】：${senderIgsid}`);
 
         if (!(senderIgsid in users)) {
           // First time seeing this user
+          console.log(`【现有用户不存在：${senderIgsid}，新建当前用户】`);
           let user = new User(senderIgsid);
           let userProfile = await GraphApi.getUserProfile(senderIgsid);
           if (userProfile) {
