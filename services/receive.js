@@ -74,6 +74,7 @@ module.exports = class Receive {
 
   // Handles messages events with text
   handleTextMessage() {
+    console.log(`【当前用户参数】：${this.user}`);
     console.log(
       `Received text from user '${this.user.name}' (${this.user.igsid}):\n`,
       this.webhookEvent.message.text
